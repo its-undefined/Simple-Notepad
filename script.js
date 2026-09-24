@@ -12,6 +12,7 @@ const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
 const noteTitle = document.getElementById('noteTitle');
 const textArea = document.getElementById('textArea');
 const charCounter = document.getElementById('charCounter');
+const noteTitleInfo = document.getElementById('noteTitleInfo');
 
 // Render all notes
 function renderNotes() {
@@ -76,6 +77,8 @@ function openNote(id, fromTrash = false) {
 
     noteTitle.value = note.title;
     textArea.value = note.content;
+    noteTitleInfo.textContent = `Название: ${note.title}`;
+
     charCount();
   }
 }
@@ -119,6 +122,7 @@ function saveNote() {
   localStorage.setItem('notes', JSON.stringify(notes));
   noteTitle.value = "";
   textArea.value = "";
+  noteTitleInfo.textContent = translate('untitledNote');
 
   showToast(translate('noteSaved'));
   renderNotes();
@@ -254,6 +258,7 @@ const settingsOverlay = document.getElementById('settingsOverlay');
 settingsButton.addEventListener('click', () => {
   changelogOverlay.classList.remove('active');
   translateOverlay.classList.remove('active');
+  infoOverlay.classList.remove('active');
   settingsOverlay.classList.toggle('active');
 });
 
@@ -408,6 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
       currentNoteId = note.id;
       noteTitle.value = note.title;
       textArea.value = note.content;
+      noteTitleInfo.textContent = `Название: ${note.title}`;
     }
   }
 

@@ -60,7 +60,7 @@
     </button>
 
     <fieldset id="translateOverlay" class="translateOverlay">
-      <legend data-i18n="language"></legend>
+      <legend class="translateLegend" data-i18n="language"></legend>
 
       <label class="languageOption">
         <input id="english" type="radio" name="language" value="en" checked>
@@ -89,7 +89,7 @@
     </button>
 
     <fieldset id="changelogOverlay" class="changelogOverlay">
-      <legend data-i18n="changelog"></legend>
+      <legend class="changelogLegend" data-i18n="changelog"></legend>
       <p class="changelogVersion" data-version="2026.09.1"></p>
       <p class="changelogDate">06.09.2026</p>
       <ul class="changelog">
@@ -137,13 +137,12 @@
       <img src="images/info.svg" alt="Info">
       <span data-i18n="infoButton"></span>
     </button>
-    
-    <fieldset id="infoOverlay" class="infoOverlay">
-      <legend data-i18n="info"></legend>
-      <p data-i18n="infoText"></p>
-    </fieldset>
 
-    <p id="charCounter"></p>
+    <fieldset id="infoOverlay" class="infoOverlay">
+      <legend class="infoLegend" data-i18n="info"></legend>
+      <p id="noteTitleInfo" data-i18n="untitledNote"></p>
+      <p id="charCounter"></p>
+    </fieldset>
   </div>
 
   <div id="toast" class="toast"></div>

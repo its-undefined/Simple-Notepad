@@ -55,7 +55,6 @@ button {
   margin-bottom: 0.40em;
   margin-left: 3px;
   padding: 0;
-
   border: none;
   background: transparent;
 
@@ -86,7 +85,6 @@ button {
   display: flex;
   flex-direction: column;
   height: 80vh;
-
   width: clamp(200px, 20vw, 250px);
   border-radius: 5px;
 
@@ -127,7 +125,6 @@ li span:hover {
 .trashPanelButton {
   margin-left: 3px;
   margin-bottom: 3px;
-
   width: calc(100% - 6px);
   height: 35px;
   border-radius: 5px;
@@ -149,7 +146,6 @@ li span:hover {
   display: flex;
   bottom: 100%;
   left: 50%;
-
   margin-bottom: 5px;
   padding: 10px;
   border: #bdbdbd 1px solid;
@@ -187,9 +183,9 @@ li span:hover {
   position: fixed;
   top: 0px;
   right: 202px;
-  padding: 0 10px;
-  width: 200px;
-
+  padding: 7px 10px 10px 10px;
+  width: 225px;
+  overflow-wrap: anywhere;
   max-height: 200px;
   overflow-y: auto;
 
@@ -260,7 +256,6 @@ textarea:focus {
   top: 51px;
   right: clamp(1px, 1.5vw, 15px);
   width: 200px;
-
   padding: 4px;
 
   background: #f2f2f2;
@@ -277,10 +272,10 @@ textarea:focus {
   border-color: #444;
 }
 
-#charCounter {
-  margin: 5px 0 2px 5px;
-  padding: 0;
-  font-size: 12px;
+#charCounter,
+#noteTitleInfo {
+  margin: 0;
+  font-size: 13px;
 }
 
 #rights {
@@ -320,7 +315,6 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 6px;
-
   width: 100%;
   margin: 0;
   padding: 6px 7px;
@@ -399,7 +393,6 @@ textarea:focus {
   right: 200px;
   padding: 0 10px;
   width: 285px;
-
   max-height: 200px;
   overflow-y: auto;
 
@@ -420,7 +413,8 @@ textarea:focus {
 }
 
 .changelogLegend,
-.translateLegend {
+.translateLegend,
+.infoLegend {
   font-size: 15px;
 }
 
