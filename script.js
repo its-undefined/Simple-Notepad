@@ -276,6 +276,7 @@ const translateOverlay = document.getElementById('translateOverlay');
 translateButton.addEventListener('click', () => {
   translateOverlay.classList.toggle('active');
   changelogOverlay.classList.remove('active');
+  infoOverlay.classList.remove('active');
 });
 
 // Character counter
@@ -291,6 +292,7 @@ const changelogOverlay = document.getElementById('changelogOverlay');
 changelogButton.addEventListener('click', () => {
   changelogOverlay.classList.toggle('active');
   translateOverlay.classList.remove('active');
+  infoOverlay.classList.remove('active');
 });
 
 // Show version in changelog overlay
@@ -312,6 +314,9 @@ const infoButton = document.getElementById('infoButton');
 const infoOverlay = document.getElementById('infoOverlay');
 infoButton.addEventListener('click', () => {
   infoOverlay.classList.toggle('active');
+  trashOverlay.classList.remove('active');
+  changelogOverlay.classList.remove('active');
+  translateOverlay.classList.remove('active');
 });
 
 // Hide overlays on textarea focus
