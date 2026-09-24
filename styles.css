@@ -84,7 +84,7 @@ button {
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 92.5vh;
   width: clamp(200px, 20vw, 250px);
   border-radius: 5px;
 
@@ -149,7 +149,7 @@ li span:hover {
   margin-bottom: 5px;
   padding: 10px;
   border: #bdbdbd 1px solid;
-  border-radius: 3px;
+  border-radius: 4px;
 
   color: black;
   background: white;
