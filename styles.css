@@ -42,6 +42,7 @@ button {
   border: #bdbdbd 1px solid;
   border-radius: 3px;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .dark button {
@@ -84,7 +85,7 @@ button {
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 92.5vh;
+  height: 92.5dvh;
   width: clamp(200px, 20vw, 250px);
   border-radius: 5px;
 
@@ -244,10 +245,10 @@ textarea:focus {
 }
 
 .actionButton {
+  flex: 1;
   margin-top: 3px;
   margin-left: 0;
-
-  width: clamp(75px, 20vw, 200px);
+  width: auto;
   height: 40px;
 }
 
@@ -407,7 +408,15 @@ textarea:focus {
 
 @media (max-width: 503px) {
   .changelogOverlay {
-    top: 115px;
+    top: 122px;
+    right: -3px;
+  }
+  .translateOverlay {
+    top: 122px;
+    right: -3px;
+  }
+  .infoOverlay {
+    top: 122px;
     right: -3px;
   }
 }
