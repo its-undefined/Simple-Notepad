@@ -27,7 +27,6 @@ export const uiTranslations = {
     infoButton: "Info",
     trashPanelButton: "Trash",
     trashEmpty: "Trash is empty",
-    rights: "© 2026 Simple Notepad. All rights not reserved.",
     inDevelopment: "Under development",
     changelogVersion: "Version"
   },
@@ -58,7 +57,6 @@ export const uiTranslations = {
     infoButton: "Info",
     trashPanelButton: "Papierkorb",
     trashEmpty: "Papierkorb ist leer",
-    rights: "© 2026 Simple Notepad. Alle Rechte nicht reserviert.",
     inDevelopment: "In Entwicklung",
     changelogVersion: "Version"
   },
@@ -89,7 +87,6 @@ export const uiTranslations = {
     infoButton: "Infos",
     trashPanelButton: "Corbeille",
     trashEmpty: "La corbeille est vide",
-    rights: "© 2026 Simple Notepad. Tous droits non réservés.",
     inDevelopment: "En développement",
     changelogVersion: "Version"
   },
@@ -120,7 +117,6 @@ export const uiTranslations = {
     infoButton: "Инфо",
     trashPanelButton: "Корзина",
     trashEmpty: "Корзина пуста",
-    rights: "© 2026 Simple Notepad. Все права не защищены.",
     inDevelopment: "В разработке",
     changelogVersion: "Версия"
   }

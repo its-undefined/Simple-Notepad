@@ -15,8 +15,8 @@ body {
 
 @media (max-width: 400px) {
   body {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
   }
 }
 
@@ -54,7 +54,7 @@ button {
 #noteTitle {
   margin-top: 1.5px;
   margin-bottom: 0.40em;
-  margin-left: 3px;
+  margin-left: 2px;
   padding: 0;
   border: none;
   background: transparent;
@@ -85,7 +85,7 @@ button {
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 92.5dvh;
+  height: 94dvh;
   width: clamp(200px, 20vw, 250px);
   border-radius: 5px;
 
@@ -138,7 +138,6 @@ li span:hover {
 }
 
 .dark .trashPanelButton {
-  color: white;
   background: #191919;
 }
 
@@ -152,7 +151,6 @@ li span:hover {
   border: #bdbdbd 1px solid;
   border-radius: 4px;
 
-  color: black;
   background: white;
   white-space: nowrap;
 
@@ -162,47 +160,9 @@ li span:hover {
   opacity: 0;
 }
 
-.dark .trashOverlay {
-  color: #fff;
-  background: #191919;
-  border-color: #444;
-}
-
 .trashOverlay ul {
   margin: 0;
   padding: 0;
-}
-
-.infoWrapper {
-  position: relative;
-  margin-top: auto;
-
-  white-space: nowrap;
-}
-
-.infoOverlay {
-  position: fixed;
-  top: 0px;
-  right: 202px;
-  padding: 7px 10px 10px 10px;
-  width: 225px;
-  overflow-wrap: anywhere;
-  max-height: 200px;
-  overflow-y: auto;
-
-  background: #f2f2f2;
-  border: #bdbdbd 1px solid;
-  border-radius: 5px;
-
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-7px);
-}
-
-.dark .infoOverlay {
-  color: #fff;
-  background: #191919;
-  border-color: #444;
 }
 
 textarea {
@@ -268,40 +228,22 @@ textarea:focus {
   transform: translateY(-7px);
 }
 
-.dark .settingsOverlay {
-  background: #333;
-  border-color: #444;
-}
-
 #charCounter,
 #noteTitleInfo {
   margin: 0;
   font-size: 13px;
 }
 
-#rights {
-  margin-top: 25px;
-  text-align: center;
-  color:#b8b8b8;
-}
-
-.dark #rights {
-  color: #5f5f5f;
-}
-
 /* 2. Preferences */
-.preferenceButton {
+#settingsButton {
   background: none;
   border: none;
   padding: 0;
 }
 
-.dark .preferenceButton {
-  background: none;
-}
-
-.dark .preferenceButton img,
+.dark #settingsButton,
 .dark .optionItem img {
+  background: none;
   filter: invert(1);
   transition: 0.25s ease;
 }
@@ -324,10 +266,8 @@ textarea:focus {
   background: transparent;
   border: none;
   border-radius: 5px;
-
   font-family: inherit;
   text-align: left;
-
   cursor: pointer;
   user-select: none;
 
@@ -339,7 +279,7 @@ textarea:focus {
 }
 
 .dark .settingsOverlay .optionItem:hover {
-  background-color: #ffffff15;
+  background-color: #333;
 }
 
 .settingsOverlay .optionItem > img {
@@ -359,59 +299,71 @@ textarea:focus {
 }
 
 .dark .settingsOverlay .optionItem:active {
-  background-color: #ffffff25;
+  background-color: #444;
+}
+
+.translateOverlay,
+.changelogOverlay,
+.infoOverlay {
+  position: fixed;
+  top: 0;
+  right: 200px;
+  border-radius: 5px;
+  overflow-y: auto;
+
+  background: #f2f2f2;
+  border: #bdbdbd 1px solid;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-7px);
+}
+
+.dark .trashOverlay,
+.dark .settingsOverlay,
+.dark .translateOverlay,
+.dark .changelogOverlay,
+.dark .infoOverlay {
+  background: #191919;
+  border-color: #444;
 }
 
 .translateOverlay {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0px;
-  right: 200px;
   padding: 10px 15px 15px 10px;
-
-  background: #f2f2f2;
-  border: #bdbdbd 1px solid;
-  border-radius: 5px;
-
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-7px);
 }
 
-.dark .translateOverlay {
-  background: #191919;
-  border-color: #444;
-}
-
-.languageOption {
+.translateOption {
   display: flex;
 }
 
 .changelogOverlay {
-  position: fixed;
-  top: 0px;
-  right: 200px;
   padding: 0 10px;
   width: 285px;
   max-height: 200px;
-  overflow-y: auto;
+}
 
-  background: #f2f2f2;
-  border: #bdbdbd 1px solid;
-  border-radius: 5px;
+.infoWrapper {
+  position: relative;
+  margin-top: auto;
 
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-7px);
+  white-space: nowrap;
+}
+
+.infoOverlay {
+  padding: 7px 10px 10px 10px;
+  width: 225px;
+  overflow-wrap: anywhere;
+  max-height: 200px;
 }
 
 @media (max-width: 503px) {
-  .changelogOverlay {
+  .translateOverlay {
     top: 122px;
     right: -3px;
   }
-  .translateOverlay {
+  .changelogOverlay {
     top: 122px;
     right: -3px;
   }
@@ -425,11 +377,6 @@ textarea:focus {
 .translateLegend,
 .infoLegend {
   font-size: 15px;
-}
-
-.dark .changelogOverlay {
-  background: #191919;
-  border-color: #444;
 }
 
 .changelogOverlay .changelogVersion:first-of-type {
