@@ -198,7 +198,7 @@ function deleteNote(id) {
   renderNotes();
 }
 
-// Auto-delete trashed notes after expriration time
+// Purge expired trashed notes
 function cleanTrash() {
   trash = trash.filter(note => {
     return Date.now() < note.expiresAt;
@@ -207,7 +207,37 @@ function cleanTrash() {
   localStorage.setItem('trash', JSON.stringify(trash));
 }
 
-// Show search menu (under development)
+// Show a toast notification
+function showToast(text) {
+  const el = document.getElementById('toast');  
+  el.textContent = text;
+  el.classList.add('show');
+
+  setTimeout(() => {
+    el.classList.remove('show');
+  }, 2000);
+}
+
+// Clipboard toasts (Ctrl + C/V/X)
+document.addEventListener('copy', () => {
+  showToast(translate('textCopy'));
+});
+document.addEventListener('paste', () => {
+  showToast(translate('textPaste'));
+});
+document.addEventListener('cut', () => {
+  showToast(translate('textCut'));
+});
+
+// Undo toast (Ctrl + Z)
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.code === 'KeyZ') {
+    showToast(translate('undoAction'));
+    e.preventDefault();
+  }
+});
+
+// Search menu (under development)
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.code === 'KeyF') {
     showToast(translate('textFind'));
@@ -215,7 +245,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Highlight search matches in text (under development)
+// Highlight search matches (under development)
 function highlight(query) {
   let text = textArea.innerText;
   const regex = new RexExp(query, "gi");
@@ -230,28 +260,6 @@ function highlight(query) {
   });
 }
 
-// Show a toast notification
-function showToast(text) {
-  const el = document.getElementById('toast');  
-  el.textContent = text;
-  el.classList.add('show');
-
-  setTimeout(() => {
-    el.classList.remove('show');
-  }, 2000);
-}
-
-// Show toast notifications for clipboard actions
-document.addEventListener('copy', () => {
-  showToast(translate('textCopy'));
-});
-document.addEventListener('paste', () => {
-  showToast(translate('textPaste'));
-});
-document.addEventListener('cut', () => {
-  showToast(translate('textCut'));
-});
-
 // Settings overlay
 const settingsButton = document.getElementById('settingsButton');
 const settingsOverlay = document.getElementById('settingsOverlay');
@@ -262,7 +270,7 @@ settingsButton.addEventListener('click', () => {
   settingsOverlay.classList.toggle('active');
 });
 
-// Switch between light and dark themes
+// Toggle light/dark themes
 const themeButton = document.getElementById('themeButton');
 themeButton.addEventListener('click', switchTheme);
 function switchTheme() {
@@ -275,7 +283,7 @@ function switchTheme() {
     : "images/moon.svg";
 }
 
-// Toggle translate dropdown visibility
+// Translate dropdown
 const translateButton = document.getElementById('translateButton');
 const translateOverlay = document.getElementById('translateOverlay');
 translateButton.addEventListener('click', () => {
@@ -291,7 +299,7 @@ function charCount() {
   charCounter.textContent = translate('charCounter') + count;
 }
 
-// Toggle changelog overlay visibility
+// Changelog overlay
 const changelogButton = document.getElementById('changelogButton');
 const changelogOverlay = document.getElementById('changelogOverlay');
 changelogButton.addEventListener('click', () => {
@@ -300,21 +308,21 @@ changelogButton.addEventListener('click', () => {
   infoOverlay.classList.remove('active');
 });
 
-// Show version in changelog overlay
+// Versions in changelog overlay
 function updateChangelogVersion() {
   document.querySelectorAll('.changelogVersion').forEach(el => {
     el.textContent = `${translate('changelogVersion')} ${el.dataset.version}`;
   });
 }
 
-// Toggle trash overlay visibility
+// Trash overlay
 const trashPanelButton = document.getElementById('trashPanelButton');
 const trashOverlay = document.getElementById('trashOverlay');
 trashPanelButton.addEventListener('click', () => {
   trashOverlay.classList.toggle('active');
 });
 
-// Toggle info overlay visibility
+// Info overlay
 const infoButton = document.getElementById('infoButton');
 const infoOverlay = document.getElementById('infoOverlay');
 infoButton.addEventListener('click', () => {
@@ -325,21 +333,22 @@ infoButton.addEventListener('click', () => {
 });
 
 // Hide overlays on textarea focus
-textArea.addEventListener('focus', () => {
-  trashOverlay.classList.remove('active');
-  changelogOverlay.classList.remove('active');
-  translateOverlay.classList.remove('active');
-  settingsOverlay.classList.remove('active');
-  infoOverlay.classList.remove('active');
-});
+const overlays = [
+  trashOverlay,
+  changelogOverlay,
+  translateOverlay,
+  settingsOverlay,
+  infoOverlay
+];
 
-noteTitle.addEventListener('focus', () => {
-  trashOverlay.classList.remove('active');
-  changelogOverlay.classList.remove('active');
-  translateOverlay.classList.remove('active');
-  settingsOverlay.classList.remove('active');
-  infoOverlay.classList.remove('active');
-});
+function closeOverlays() {
+  for (const overlay of overlays) {
+    overlay.classList.remove('active')
+  }
+}
+
+textArea.addEventListener('focus', closeOverlays);
+noteTitle.addEventListener('focus', closeOverlays);
 
 // Default language
 let currentLang = localStorage.getItem('lang') || 'en';
