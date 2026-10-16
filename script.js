@@ -52,16 +52,8 @@ function renderNotes() {
       const titleSpan = document.createElement('span');
       titleSpan.textContent = note.title;
       titleSpan.onclick = () => openNote(note.id, true);
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = "×";
-      deleteButton.onclick = () => deleteNote(note.id);
-      const restoreButton = document.createElement('button');
-      restoreButton.textContent = "←";
-      restoreButton.onclick = () => restoreNote(note.id);
 
       li.appendChild(titleSpan);
-      li.appendChild(deleteButton);
-      li.appendChild(restoreButton);
       delList.appendChild(li);
     });
   }
@@ -80,7 +72,24 @@ function openNote(id, fromTrash = false) {
     noteTitleInfo.textContent = `Название: ${note.title}`;
 
     charCount();
+    noteButtons();
+  } if (source === trash) {
+    trashButtons();
   }
+}
+
+function noteButtons() {
+  saveButton.classList.remove('hidden');
+  trashButton.classList.remove('hidden');
+  restoreButton.classList.add('hidden');
+  deleteButton.classList.add('hidden');
+}
+
+function trashButtons() {
+  saveButton.classList.add('hidden');
+  trashButton.classList.add('hidden');
+  restoreButton.classList.remove('hidden');
+  deleteButton.classList.remove('hidden');
 }
 
 // Save note
@@ -162,6 +171,8 @@ function moveToTrash(id) {
 }
 
 // Restore note
+const restoreButton = document.getElementById('restoreButton');
+restoreButton.addEventListener('click', () => restoreNote(currentNoteId));
 function restoreNote(id) {
   const noteToRestore = trash.find(n => n.id === id);
   if (!noteToRestore) {
@@ -179,11 +190,14 @@ function restoreNote(id) {
   localStorage.setItem('notes', JSON.stringify(notes));
   localStorage.setItem('trash', JSON.stringify(trash));
 
+  noteButtons();
   showToast(translate('noteRestored'));
   renderNotes();
 }
 
 // Delete note
+const deleteButton = document.getElementById('deleteButton');
+deleteButton.addEventListener('click', () => deleteNote(currentNoteId));
 function deleteNote(id) {
   const noteToDelete = trash.find(n => n.id === id);
   if (!noteToDelete) {
@@ -194,6 +208,10 @@ function deleteNote(id) {
   trash = trash.filter(n => n.id !== id);
   localStorage.setItem('trash', JSON.stringify(trash));
 
+  noteTitle.value = "";
+  textArea.value = "";
+
+  noteButtons();
   showToast(translate('noteDeleted'));
   renderNotes();
 }

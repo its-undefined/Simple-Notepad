@@ -13,7 +13,8 @@ export const changelogTranslations = {
     changelogEntry10: "Added empty trash message",
     changelogEntry11: "Redesigned settings menu",
     changelogEntry12: "Redesigned language menu",
-    changelogEntry13: "Added an info menu"
+    changelogEntry13: "Added an info menu",
+    changelogEntry14: "Improved action button layout for notes and trash"
   },
   de: {
     changelogEntry1: "Leistungsverbesserungen und Optimierungen",
@@ -28,7 +29,8 @@ export const changelogTranslations = {
     changelogEntry10: "Hinweis bei leerem Papierkorb hinzugefügt",
     changelogEntry11: "Einstellungsmenü neu gestaltet",
     changelogEntry12: "Sprachmenü neu gestaltet",
-    changelogEntry13: "Infomenü hinzugefügt"
+    changelogEntry13: "Infomenü hinzugefügt",
+    changelogEntry14: "Schaltflächen für Notizen und Papierkorb neu angeordnet"
   },
   fr: {
     changelogEntry1: "Améliorations des performances et optimisations",
@@ -43,7 +45,8 @@ export const changelogTranslations = {
     changelogEntry10: "Ajout d'un message lorsque la corbeille est vide",
     changelogEntry11: "Refonte du menu des paramètres",
     changelogEntry12: "Menu des langues repensé",
-    changelogEntry13: "Ajout d'un menu d'information"
+    changelogEntry13: "Ajout d'un menu d'information",
+    changelogEntry14: "Réorganisation des boutons d’action des notes et de la corbeille"
   },
   ru: {
     changelogEntry1: "Улучшена производительность и стабильность",
@@ -58,6 +61,7 @@ export const changelogTranslations = {
     changelogEntry10: "Добавлено сообщение о пустой корзине",
     changelogEntry11: "Переработано меню настроек",
     changelogEntry12: "Переработано меню языков",
-    changelogEntry13: "Добавлено информационное меню"
+    changelogEntry13: "Добавлено информационное меню",
+    changelogEntry14: "Переработано расположение кнопок для заметок и корзины"
   }
 };

@@ -144,6 +144,7 @@ li span:hover {
 .trashOverlay {
   position: absolute;
   display: flex;
+  width: 100%;
   bottom: 100%;
   left: 50%;
   margin-bottom: 5px;
@@ -152,7 +153,8 @@ li span:hover {
   border-radius: 4px;
 
   background: white;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  justify-content: center;
 
   pointer-events: none;
   translate: -50%;
@@ -348,7 +350,7 @@ textarea:focus {
   position: relative;
   margin-top: auto;
 
-  white-space: nowrap;
+  white-space: pre-wrap;
 }
 
 .infoOverlay {
@@ -447,4 +449,8 @@ textarea:focus {
   pointer-events: auto;
   opacity: 1;
   transform: translateY(0);
+}
+
+.hidden {
+    display: none;
 }
