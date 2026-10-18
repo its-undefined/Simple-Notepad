@@ -332,13 +332,14 @@ textarea:focus {
 .translateOverlay {
   display: flex;
   flex-direction: column;
-  padding: 5px 10px 10px 5px;
+  padding: 4px;
 }
 
 .translateOption {
   display: flex;
   border: none;
-  padding: 2.5px 5.5px;
+  margin: 0;
+  padding: 3.5px 5.5px;
 
   background-color: #f2f2f2;
 }
