@@ -244,7 +244,7 @@ textarea:focus {
 }
 
 .dark #settingsButton,
-.dark .optionItem img {
+.dark .settingsOption img {
   background: none;
   filter: invert(1);
   transition: 0.25s ease;
@@ -256,7 +256,7 @@ textarea:focus {
   right: 15px;
 }
 
-.settingsOverlay .optionItem {
+.settingsOverlay .settingsOption {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -276,15 +276,15 @@ textarea:focus {
   transition: background-color 0.15s ease;
 }
 
-.settingsOverlay .optionItem:hover {
+.settingsOverlay .settingsOption:hover {
   background-color: #0000000f;
 }
 
-.dark .settingsOverlay .optionItem:hover {
+.dark .settingsOverlay .settingsOption:hover {
   background-color: #333;
 }
 
-.settingsOverlay .optionItem > img {
+.settingsOverlay .settingsOption > img {
   width: 16px;
   height: 16px;
 
@@ -292,15 +292,13 @@ textarea:focus {
   transition: .25s ease;
 }
 
-.settingsOverlay .optionItem:hover > img {
+.settingsOverlay .settingsOption:hover > img {
   opacity: 1;
 }
 
-.settingsOverlay .optionItem:active {
-  background-color: #0000001a;
-}
 
-.dark .settingsOverlay .optionItem:active {
+
+.dark .settingsOverlay .settingsOption:active {
   background-color: #444;
 }
 
@@ -312,6 +310,7 @@ textarea:focus {
   right: 200px;
   border-radius: 5px;
   overflow-y: auto;
+  min-width: 200px;
 
   background: #f2f2f2;
   border: #bdbdbd 1px solid;
@@ -333,11 +332,37 @@ textarea:focus {
 .translateOverlay {
   display: flex;
   flex-direction: column;
-  padding: 10px 15px 15px 10px;
+  padding: 5px 10px 10px 5px;
 }
 
 .translateOption {
   display: flex;
+  border: none;
+  padding: 2.5px 5.5px;
+
+  background-color: #f2f2f2;
+}
+
+.dark .translateOption {
+  display: flex;
+
+  background-color: #191919;
+}
+
+.translateOption:hover {
+  background-color: #0000000f;
+}
+
+.dark .translateOption:hover {
+  background-color: #333;
+}
+
+.settingsOverlay .translateOption:active {
+  background-color: #0000001a;
+}
+
+.dark .settingsOverlay .translateOption:active {
+  background-color: #444;
 }
 
 .changelogOverlay {
@@ -354,7 +379,7 @@ textarea:focus {
 }
 
 .infoOverlay {
-  padding: 7px 10px 10px 10px;
+  padding: 5px 8px 10px 8px;
   width: 225px;
   overflow-wrap: anywhere;
   max-height: 200px;
@@ -429,6 +454,7 @@ textarea:focus {
   pointer-events: none;
   border-radius: 6.5px;
 
+  text-align: center;
   color: black;
   background: #0000001a;
   border: 1px solid #0000001a;

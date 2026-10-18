@@ -378,8 +378,8 @@ function translateChangelog(key) {
 }
 
 // Language selection
-document.querySelectorAll('input[name="language"]').forEach(input => {
-  input.addEventListener('change', (e) => {
+document.querySelectorAll('button[name="language"]').forEach(button => {
+  button.addEventListener('click', (e) => {
     const lang = e.target.value;
     changeLanguage(lang);
   });
@@ -413,9 +413,6 @@ function changeLanguage(lang) {
   charCount();
   updateChangelogVersion()
 }
-
-// Set current language radio button as checked
-document.querySelector(`input[value="${currentLang}"]`).checked = true;
 
 // Load saved data on page load
 document.addEventListener('DOMContentLoaded', () => {

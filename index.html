@@ -51,41 +51,25 @@
   </button>
 
   <div id="settingsOverlay" class="settingsOverlay">
-    <button id="themeButton" class="optionItem">
+    <button id="themeButton" class="settingsOption">
       <img id="themeIcon" src="images/moon.svg" alt="Switch Theme">
       <span data-i18n="themeButton"></span>
     </button>
 
-    <button id="translateButton" class="optionItem">
+    <button id="translateButton" class="settingsOption">
       <img src="images/translate.svg" alt="Translate">
       <span data-i18n="translateButton"></span>
     </button>
 
     <fieldset id="translateOverlay" class="translateOverlay">
       <legend class="translateLegend" data-i18n="language"></legend>
-
-      <label class="translateOption">
-        <input id="english" type="radio" name="language" value="en" checked>
-        English
-      </label>
-
-      <label class="translateOption">
-        <input id="german" type="radio" name="language" value="de">
-        Deutsch
-      </label>
-
-      <label class="translateOption">
-        <input id="french" type="radio" name="language" value="fr">
-        Français
-      </label>
-
-      <label class="translateOption">
-        <input id="russian" type="radio" name="language" value="ru">
-        Русский
-      </label>
+      <button type="button" class="translateOption" id="english" name="language" value="en">English</button>
+      <button type="button" class="translateOption" id="german" name="language" value="de">Deutsch</button>
+      <button type="button" class="translateOption" id="french" name="language" value="fr">Français</button>
+      <button type="button" class="translateOption" id="russian" name="language" value="ru">Русский</button>
     </fieldset>
 
-    <button id="changelogButton" class="optionItem">
+    <button id="changelogButton" class="settingsOption">
       <img src="images/logs.svg" alt="Change logs">
       <span data-i18n="changelogButton"></span>
     </button>
@@ -141,7 +125,7 @@
       </ul>
     </fieldset>
 
-    <button id="infoButton" class="optionItem">
+    <button id="infoButton" class="settingsOption">
       <img src="images/info.svg" alt="Info">
       <span data-i18n="infoButton"></span>
     </button>

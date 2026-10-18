@@ -14,7 +14,8 @@ export const changelogTranslations = {
     changelogEntry11: "Redesigned settings menu",
     changelogEntry12: "Redesigned language menu",
     changelogEntry13: "Added an info menu",
-    changelogEntry14: "Improved action button layout for notes and trash"
+    changelogEntry14: "Improved action button layout for notes and trash",
+    changelogEntry15: "Redesigned language selection panel"
   },
   de: {
     changelogEntry1: "Leistungsverbesserungen und Optimierungen",
@@ -30,7 +31,8 @@ export const changelogTranslations = {
     changelogEntry11: "Einstellungsmenü neu gestaltet",
     changelogEntry12: "Sprachmenü neu gestaltet",
     changelogEntry13: "Infomenü hinzugefügt",
-    changelogEntry14: "Schaltflächen für Notizen und Papierkorb neu angeordnet"
+    changelogEntry14: "Schaltflächen für Notizen und Papierkorb neu angeordnet",
+    changelogEntry15: "Panel zur Auswahl der Sprachen überarbeitet"
   },
   fr: {
     changelogEntry1: "Améliorations des performances et optimisations",
@@ -46,7 +48,8 @@ export const changelogTranslations = {
     changelogEntry11: "Refonte du menu des paramètres",
     changelogEntry12: "Menu des langues repensé",
     changelogEntry13: "Ajout d'un menu d'information",
-    changelogEntry14: "Réorganisation des boutons d’action des notes et de la corbeille"
+    changelogEntry14: "Réorganisation des boutons d’action des notes et de la corbeille",
+    changelogEntry15: "Panneau de sélection des langues repensé"
   },
   ru: {
     changelogEntry1: "Улучшена производительность и стабильность",
@@ -62,6 +65,7 @@ export const changelogTranslations = {
     changelogEntry11: "Переработано меню настроек",
     changelogEntry12: "Переработано меню языков",
     changelogEntry13: "Добавлено информационное меню",
-    changelogEntry14: "Переработано расположение кнопок для заметок и корзины"
+    changelogEntry14: "Переработано расположение кнопок для заметок и корзины",
+    changelogEntry15: "Переработана панель смены языков"
   }
 };
