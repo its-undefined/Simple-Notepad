@@ -329,6 +329,7 @@ changelogButton.addEventListener('click', () => {
 // Versions in changelog overlay
 function updateChangelogVersion() {
   document.querySelectorAll('.changelogVersion').forEach(el => {
+    el.dataset.version ??= el.textContent.trim();
     el.textContent = `${translate('changelogVersion')} ${el.dataset.version}`;
   });
 }
